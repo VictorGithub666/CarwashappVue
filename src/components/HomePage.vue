@@ -1,31 +1,37 @@
 <template>
-  <div class="home-page">
-    <h1>Welcome to Social-App</h1>
-    <p>Your ultimate conversation solution.</p>
-    <div class="content">
-      <h2>About Social-App</h2>
-      <p>
-        Social-App connects you with friends and family, allowing you to share 
-        moments, engage in meaningful conversations, and stay updated on what 
-        matters most to you. Our user-friendly interface and robust features 
-        make it easy to navigate and enjoy your social experience.
-      </p>
-      <p>
-        Whether you're posting updates, sharing photos, or commenting on your 
-        friends' posts, Social-App makes communication simple and fun. Join us 
-        today and become a part of our growing community!
-      </p>
-      <h2>Features:</h2>
-      <ul>
-        <li>Connect with friends and family</li>
-        <li>Share photos and updates</li>
-        <li>Engage in discussions and comments</li>
-        <li>Discover new content and trends</li>
-        <li>User-friendly interface</li>
-      </ul>
-    </div>
+  <div style="color: #ebe9fc; background-color: #010104; height: 100vh;" class="home-page">
+    <div class="video-container">
+      <video autoplay muted loop class="background-video">
+        <source src="/CarwashVideo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+     
+        <h1>Welcome to Our Car Wash App</h1>
+        <p>Experience the ultimate in convenience and cleanliness for your vehicle.</p>
+        <router-link to="/booking" class="btn btn-primary" active-class="active">Book Your Wash Now</router-link>
+      </div>
+      <div class="content">
+        <h2 style="color: #ebe9fc;">About Our App</h2>
+        <p>
+          Our app offers a seamless car wash booking experience right at your fingertips. Easily schedule appointments, choose from a variety of wash options, and track your booking status.
+        </p>
+        <p>
+          We use eco-friendly products and state-of-the-art equipment to ensure your car is meticulously cleaned and cared for. Our dedicated team is committed to providing exceptional customer service.
+        </p>
+        <h2 style="color: #ebe9fc;">Features:</h2>
+        <ul style="color: #ebe9fc;">
+          <li>Easy online booking</li>
+          <li>Variety of wash options</li>
+          <li>Real-time booking status</li>
+          <li>Eco-friendly products</li>
+          <li>Exceptional customer service</li>
+        </ul>
+       
+      </div>
+    
   </div>
 </template>
+
 
 <script>
 export default {
@@ -37,30 +43,41 @@ export default {
 .home-page {
   text-align: center;
   padding: 20px;
-  background-color: #f4f4f4;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
 }
 
-.home-page h1 {
-  font-size: 28px;
-  color: #3498db;
-  margin-bottom: 10px;
+.video-container {
+  position: relative;
+  width: 100%; /* Adjust as needed */
+  height: 300px; /* Adjust as needed */
+  z-index: 99;
+  overflow: hidden; /* Ensure any overflow is hidden */
+  border-radius: 6cap;
 }
 
-.home-page p {
-  font-size: 18px;
-  color: #555;
-  margin: 10px 0;
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1; /* Place video behind content */
+  transform: translate(-50%, -50%); /* Center the video */
 }
 
 .content {
+  position: relative; /* Ensure content stays above the video */
+  z-index: 1; /* Ensure content appears above video */
   text-align: left;
   margin: 20px auto;
   max-width: 600px;
 }
 
+/* Additional styles for the content */
 .content h2 {
   font-size: 22px;
   color: #2c3e50;
@@ -77,4 +94,19 @@ export default {
   margin: 8px 0;
   font-size: 16px;
 }
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
 </style>
